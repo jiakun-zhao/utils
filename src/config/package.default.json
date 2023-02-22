@@ -1,0 +1,19 @@
+{
+    "name": "pkg-name",
+    "version": "0.0.0",
+    "description": "",
+    "homepage": "https://github.com/jiakun-zhao/pkg-name#readme",
+    "bugs": {
+        "url": "https://github.com/jiakun-zhao/pkg-name/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jiakun-zhao/pkg-name.git"
+    },
+    "license": "MIT",
+    "author": "Jiakun Zhao <jiakun.zhao@outlook.com>",
+    "type": "module",
+    "eslintConfig": {
+        "extends": "@jiakun-zhao"
+    }
+}
