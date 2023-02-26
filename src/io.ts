@@ -1,5 +1,5 @@
 import { access, readFile, readdir, stat } from 'node:fs/promises'
-import { resolve } from 'node:path'
+import { join } from 'node:path'
 
 export async function readText(path: string) {
     try {
@@ -15,11 +15,15 @@ export async function readJson(path: string) {
     return text ? JSON.parse(text) : null
 }
 
+export async function readPackageJson(path = process.cwd()) {
+    return readJson(path)
+}
+
 export async function walk(path: string) {
     const files: string[] = []
     try {
         for (const entry of await readdir(path)) {
-            const entryPath = resolve(path, entry)
+            const entryPath = join(path, entry)
             if ((await stat(entryPath)).isDirectory())
                 files.push(...await walk(entryPath))
             else
